@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CleanConnect — Rejoignez la liste d'attente</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+background: #0A0F1E;
+color: #F0F4F8;
+font-family: 'Outfit', sans-serif;
+min-height: 100vh;
+}
+
+.bg {
+min-height: 100vh;
+background: #0A0F1E;
+position: relative;
+overflow: hidden;
+}
+
+.bg::before {
+content: '';
+position: fixed;
+top: -200px;
+right: -200px;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(0,229,195,0.1) 0%, transparent 70%);
+pointer-events: none;
+}
+
+.bg::after {
+content: '';
+position: fixed;
+bottom: -100px;
+left: -100px;
+width: 400px;
+height: 400px;
+background: radial-gradient(circle, rgba(0,99,168,0.08) 0%, transparent 70%);
+pointer-events: none;
+}
+
+nav {
+display: flex;
+justify-content: center;
+padding: 1.5rem 2rem;
+position: relative;
+z-index: 10;
+}
+
+.logo {
+display: flex;
+align-items: center;
+gap: 0.7rem;
+text-decoration: none;
+}
+
+.logo-icon {
+width: 38px;
+height: 38px;
+background: linear-gradient(135deg, #00E5C3, #0099A8);
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.logo-icon svg { width: 22px; height: 22px; }
+
+.logo-text {
+font-family: 'Bricolage Grotesque', sans-serif;
+font-size: 1.3rem;
+font-weight: 800;
+color: #F0F4F8;
+letter-spacing: -0.03em;
+}
+
+.logo-text span { color: #00E5C3; }
+
+.hero {
+text-align: center;
+padding: 2rem 1.5rem 3rem;
+position: relative;
+z-index: 1;
+max-width: 600px;
+margin: 0 auto;
+}
+
+.badge {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+background: rgba(0,229,195,0.1);
+border: 1px solid rgba(0,229,195,0.25);
+border-radius: 100px;
+padding: 0.4rem 1rem;
+font-size: 0.8rem;
+font-weight: 600;
+color: #00E5C3;
+margin-bottom: 1.5rem;
+}
+
+.badge-dot {
+width: 7px;
+height: 7px;
+background: #00E5C3;
+border-radius: 50%;
+animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+0%,100% { opacity:1; transform:scale(1); }
+50% { opacity:.4; transform:scale(.7); }
+}
+
+h1 {
+font-family: 'Bricolage Grotesque', sans-serif;
+font-size: clamp(2.2rem, 8vw, 3.5rem);
+font-weight: 800;
+line-height: 1.1;
+letter-spacing: -0.04em;
+margin-bottom: 1.2rem;
+}
+
+h1 span { color: #00E5C3; }
+
+.hero-sub {
+font-size: 1rem;
+color: #8FA3B1;
+line-height: 1.7;
+max-width: 480px;
+margin: 0 auto 2rem;
+}
+
+.form-wrap {
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 20px;
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+}
+
+.form-title {
+font-size: 0.85rem;
+font-weight: 600;
+color: #F0F4F8;
+margin-bottom: 1rem;
+text-align: left;
+}
+
+.form-toggle {
+display: flex;
+background: rgba(255,255,255,0.05);
+border-radius: 12px;
+padding: 4px;
+margin-bottom: 1rem;
+gap: 4px;
+}
+
+.toggle-btn {
+flex: 1;
+text-align: center;
+padding: 0.6rem;
+border-radius: 9px;
+font-size: 0.82rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s;
+color: #8FA3B1;
+border: none;
+background: transparent;
+font-family: 'Outfit', sans-serif;
+}
+
+.toggle-btn.active {
+background: #00E5C3;
+color: #0A0F1E;
+}
+
+.input-group {
+display: flex;
+flex-direction: column;
+gap: 0.7rem;
+margin-bottom: 1rem;
+}
+
+.input-field {
+background: rgba(255,255,255,0.06);
+border: 1px solid rgba(255,255,255,0.1);
+border-radius: 12px;
+padding: 0.85rem 1rem;
+font-size: 0.9rem;
+color: #F0F4F8;
+font-family: 'Outfit', sans-serif;
+transition: border-color 0.2s;
+outline: none;
+width: 100%;
+}
+
+.input-field::placeholder { color: #6B7E8F; }
+.input-field:focus { border-color: rgba(0,229,195,0.4); }
+
+.submit-btn {
+width: 100%;
+background: #00E5C3;
+color: #0A0F1E;
+border: none;
+border-radius: 14px;
+padding: 1rem;
+font-family: 'Outfit', sans-serif;
+font-size: 1rem;
+font-weight: 700;
+cursor: pointer;
+transition: all 0.25s;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+}
+
+.submit-btn:hover { background: #00CCAD; transform: translateY(-1px); }
+
+.form-note {
+font-size: 0.72rem;
+color: #6B7E8F;
+text-align: center;
+margin-top: 0.8rem;
+}
+
+.social-proof {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 0.5rem;
+margin-bottom: 2.5rem;
+}
+
+.avatars { display: flex; }
+
+.avatar {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+border: 2px solid #0A0F1E;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.75rem;
+margin-left: -8px;
+}
+
+.avatar:first-child { margin-left: 0; }
+
+.social-text { font-size: 0.78rem; color: #8FA3B1; }
+.social-text strong { color: #F0F4F8; }
+
+.stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1rem;
+margin-bottom: 2.5rem;
+}
+
+.stat {
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 16px;
+padding: 1rem;
+text-align: center;
+}
+
+.stat-num {
+font-family: 'Bricolage Grotesque', sans-serif;
+font-size: 1.5rem;
+font-weight: 800;
+color: #00E5C3;
+letter-spacing: -0.04em;
+}
+
+.stat-label {
+font-size: 0.65rem;
+color: #8FA3B1;
+margin-top: 0.2rem;
+}
+
+.features {
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+margin-bottom: 2.5rem;
+text-align: left;
+}
+
+.feature {
+display: flex;
+align-items: flex-start;
+gap: 0.8rem;
+background: rgba(255,255,255,0.03);
+border: 1px solid rgba(255,255,255,0.06);
+border-radius: 14px;
+padding: 1rem;
+}
+
+.feature-icon {
+width: 36px;
+height: 36px;
+background: rgba(0,229,195,0.1);
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1rem;
+flex-shrink: 0;
+}
+
+.feature-title {
+font-size: 0.88rem;
+font-weight: 600;
+margin-bottom: 0.2rem;
+}
+
+.feature-desc {
+font-size: 0.75rem;
+color: #8FA3B1;
+line-height: 1.5;
+}
+
+.trust { margin-bottom: 2.5rem; }
+
+.trust-label {
+font-size: 0.7rem;
+color: #6B7E8F;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+text-align: center;
+margin-bottom: 1rem;
+}
+
+.trust-logos {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 0.8rem;
+}
+
+.trust-logo {
+background: rgba(255,255,255,0.05);
+border: 1px solid rgba(255,255,255,0.08);
+border-radius: 10px;
+padding: 0.5rem 1rem;
+font-size: 0.78rem;
+font-weight: 600;
+color: rgba(255,255,255,0.4);
+display: flex;
+align-items: center;
+gap: 0.4rem;
+}
+
+.testimonials {
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+margin-bottom: 2.5rem;
+}
+
+.testimonial {
+background: rgba(255,255,255,0.04);
+border: 1px solid rgba(255,255,255,0.07);
+border-radius: 16px;
+padding: 1rem;
+}
+
+.testimonial-text {
+font-size: 0.85rem;
+color: #F0F4F8;
+line-height: 1.6;
+margin-bottom: 0.7rem;
+font-style: italic;
+}
+
+.testimonial-author {
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
+
+.testi-avatar {
+width: 32px;
+height: 32px;
+border-radius: 50%;
+background: rgba(0,229,195,0.15);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 0.9rem;
+}
+
+.testi-name { font-size: 0.78rem; font-weight: 600; }
+.testi-role { font-size: 0.65rem; color: #8FA3B1; }
+.testi-stars { color: #FFD166; font-size: 0.65rem; margin-left: auto; }
+
+.cta-bottom {
+background: linear-gradient(135deg, rgba(0,229,195,0.1), rgba(0,99,168,0.08));
+border: 1px solid rgba(0,229,195,0.2);
+border-radius: 20px;
+padding: 1.5rem;
+text-align: center;
+margin-bottom: 2rem;
+}
+
+.cta-bottom h3 {
+font-family: 'Bricolage Grotesque', sans-serif;
+font-size: 1.3rem;
+font-weight: 800;
+margin-bottom: 0.5rem;
+letter-spacing: -0.03em;
+}
+
+.cta-bottom p {
+font-size: 0.82rem;
+color: #8FA3B1;
+margin-bottom: 1rem;
+}
+
+footer {
+text-align: center;
+padding: 1.5rem;
+font-size: 0.72rem;
+color: #6B7E8F;
+border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+footer a {
+color: #8FA3B1;
+text-decoration: none;
+margin: 0 0.5rem;
+}
+
+.success-msg {
+display: none;
+background: rgba(0,229,195,0.1);
+border: 1px solid rgba(0,229,195,0.3);
+border-radius: 14px;
+padding: 1.2rem;
+text-align: center;
+margin-top: 1rem;
+}
+
+.success-msg.show { display: block; }
+
+.success-emoji {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+}
+
+.success-text {
+font-size: 0.85rem;
+color: #00E5C3;
+font-weight: 600;
+}
+
+.countdown {
+display: flex;
+justify-content: center;
+gap: 1rem;
+margin-bottom: 1.5rem;
+flex-wrap: wrap;
+}
+
+.countdown-item { text-align: center; }
+
+.countdown-num {
+font-family: 'Bricolage Grotesque', sans-serif;
+font-size: 1.8rem;
+font-weight: 800;
+color: #00E5C3;
+letter-spacing: -0.04em;
+background: rgba(0,229,195,0.08);
+border: 1px solid rgba(0,229,195,0.2);
+border-radius: 10px;
+padding: 0.3rem 0.8rem;
+min-width: 60px;
+display: block;
+}
+
+.countdown-label {
+font-size: 0.6rem;
+color: #8FA3B1;
+margin-top: 0.3rem;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+}
+
+.countdown-sep {
+font-size: 1.5rem;
+color: #00E5C3;
+align-self: flex-start;
+margin-top: 0.3rem;
+}
+
+@media (max-width: 640px) {
+.stats {
+grid-template-columns: 1fr;
+}
+
+.countdown {
+gap: 0.5rem;
+}
+
+.countdown-sep {
+display: none;
+}
+}
+</style>
+</head>
+<body>
+<div class="bg">
+<nav>
+<a href="#" class="logo">
+<div class="logo-icon">
+<svg viewBox="0 0 22 22" fill="none">
+<rect x="1" y="2" width="20" height="20" rx="5" fill="rgba(255,255,255,0.15)"></rect>
+<path d="M11 5 C8 5 6 7.5 6 10 C6 13.5 11 18 11 18 C11 18 16 13.5 16 10 C16 7.5 14 5 11 5Z" fill="white" opacity="0.95"></path>
+<circle cx="11" cy="10" r="2.5" fill="#00E5C3"></circle>
+<path d="M17 3 L17.8 1.5 L18.6 3 L20 3.7 L18.6 4.4 L17.8 5.9 L17 4.4 L15.6 3.7Z" fill="white" opacity="0.8"></path>
+</svg>
+</div>
+<div class="logo-text">Clean<span>Connect</span></div>
+</a>
+</nav>
+
+<div class="hero">
+<div class="badge">
+<span class="badge-dot"></span>
+Lancement Côte d'Azur · Avril 2026
+</div>
+
+<h1>Votre professionnel<br>de ménage,<br><span>en temps réel.</span></h1>
+
+<p class="hero-sub">
+Comme Uber, mais pour le ménage et la conciergerie Airbnb. Réservez en 2 minutes, votre pro arrive. 🌊
+</p>
+
+<div class="countdown" id="countdown">
+<div class="countdown-item">
+<span class="countdown-num" id="days">21</span>
+<div class="countdown-label">Jours</div>
+</div>
+<div class="countdown-sep">:</div>
+<div class="countdown-item">
+<span class="countdown-num" id="hours">14</span>
+<div class="countdown-label">Heures</div>
+</div>
+<div class="countdown-sep">:</div>
+<div class="countdown-item">
+<span class="countdown-num" id="minutes">32</span>
+<div class="countdown-label">Minutes</div>
+</div>
+<div class="countdown-sep">:</div>
+<div class="countdown-item">
+<span class="countdown-num" id="seconds">00</span>
+<div class="countdown-label">Secondes</div>
+</div>
+</div>
+
+<form class="form-wrap" name="contact" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="contact" />
+<div class="form-title">👇 Je veux rejoindre CleanConnect :</div>
+
+<div style="background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.3);border-radius:12px;padding:0.7rem 1rem;margin-bottom:1rem;text-align:center;font-size:0.82rem;font-weight:700;color:#FF6B6B;">
+⚠️ PLUS QUE 17 PLACES DISPONIBLES — Offre de lancement
+</div>
+
+<div style="background:rgba(0,229,195,0.08);border:1px solid rgba(0,229,195,0.2);border-radius:12px;padding:0.8rem 1rem;margin-bottom:1rem;text-align:center;">
+<div style="font-size:1rem;font-weight:800;color:#00E5C3;margin-bottom:0.2rem;">💰 Gagnez jusqu'à 20€/h avec CleanConnect</div>
+<div style="font-size:0.72rem;color:#8FA3B1;">Nice · Cannes · Antibes · Monaco</div>
+</div>
+
+<div class="form-toggle">
+<button class="toggle-btn active" onclick="switchType(event, 'client')">👤 Je cherche une pro</button>
+<button class="toggle-btn" onclick="switchType(event, 'pro')">🧹 Je suis professionnel</button>
+</div>
+
+<div class="input-group">
+<input type="text" name="prenom" class="input-field" placeholder="Votre prénom" />
+<input type="email" name="email" class="input-field" placeholder="Votre email" />
+<input type="tel" name="telephone" class="input-field" placeholder="📱 Votre numéro de téléphone" />
+<input type="text" name="ville" class="input-field" placeholder="📍 Votre ville (Nice, Cannes, Antibes...)" id="city-input" />
+</div>
+
+<button class="submit-btn" onclick="handleSubmit()">
+🔥 JE REJOINS CLEANCONNECT
+</button>
+
+<div class="form-note">
+🔒 Gratuit · Aucune carte requise · On vous prévient au lancement
+</div>
+
+<div class="success-msg" id="success-msg">
+<div class="success-emoji">🎉</div>
+<div class="success-text">Vous êtes sur la liste !</div>
+<div style="font-size:0.75rem;color:#8FA3B1;margin-top:0.3rem;">On vous prévient dès le lancement sur la Côte d'Azur.</div>
+</div>
+</form>
+
+<div class="social-proof">
+<div class="avatars">
+<div class="avatar" style="background:rgba(0,229,195,0.2);">👩</div>
+<div class="avatar" style="background:rgba(0,99,168,0.2);">👨</div>
+<div class="avatar" style="background:rgba(0,229,195,0.15);">👩‍🦱</div>
+<div class="avatar" style="background:rgba(255,209,102,0.2);">👩‍🦰</div>
+</div>
+<div class="social-text"><strong>247 personnes</strong> déjà inscrites 🔥</div>
+</div>
+
+<div class="stats">
+<div class="stat">
+<div class="stat-num">2min</div>
+<div class="stat-label">Réservation</div>
+</div>
+<div class="stat">
+<div class="stat-num">4.9★</div>
+<div class="stat-label">Note moyenne</div>
+</div>
+<div class="stat">
+<div class="stat-num">0€</div>
+<div class="stat-label">Pour s'inscrire</div>
+</div>
+</div>
+
+<div class="features">
+<div class="feature">
+<div class="feature-icon">🗺️</div>
+<div>
+<div class="feature-title">Carte temps réel</div>
+<div class="feature-desc">Voyez les professionnels disponibles près de vous en direct, comme Uber.</div>
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🗝️</div>
+<div>
+<div class="feature-title">Conciergerie Airbnb</div>
+<div class="feature-desc">Check-out → ménage → check-in automatisé. Synchro avec votre calendrier Airbnb.</div>
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🚨</div>
+<div>
+<div class="feature-title">Mode Urgence</div>
+<div class="feature-desc">Besoin d'une pro dans l'heure ? Le mode urgence dispatche automatiquement.</div>
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">📸</div>
+<div>
+<div class="feature-title">Photos avant/après</div>
+<div class="feature-desc">Recevez les photos de votre logement après chaque intervention.</div>
+</div>
+</div>
+</div>
+
+<div class="trust">
+<div class="trust-label">Compatible avec</div>
+<div class="trust-logos">
+<div class="trust-logo">🏠 Airbnb</div>
+<div class="trust-logo">📅 Booking.com</div>
+<div class="trust-logo">🏡 Abritel</div>
+<div class="trust-logo">🌐 Vrbo</div>
+</div>
+</div>
+
+<div class="testimonials">
+<div class="testimonial">
+<div class="testimonial-text">"Enfin une solution pour gérer mes 3 appartements Airbnb à Cannes sans stress. J'attends le lancement avec impatience !"</div>
+<div class="testimonial-author">
+<div class="testi-avatar">👨</div>
+<div>
+<div class="testi-name">Marc D.</div>
+<div class="testi-role">Propriétaire Airbnb · Cannes</div>
+</div>
+<div class="testi-stars">★★★★★</div>
+</div>
+</div>
+
+<div class="testimonial">
+<div class="testimonial-text">"Je suis femme de ménage indépendante depuis 3 ans. CleanConnect va changer ma vie — plus besoin de chercher des clients !"</div>
+<div class="testimonial-author">
+<div class="testi-avatar">👩</div>
+<div>
+<div class="testi-name">Sophie M.</div>
+<div class="testi-role">Professionnelle · Nice</div>
+</div>
+<div class="testi-stars">★★★★★</div>
+</div>
+</div>
+</div>
+
+<div class="cta-bottom">
+<h3>🌊 Lancement en avril<br>sur la Côte d'Azur</h3>
+<p>Soyez parmi les premiers. Les 50 inscrits reçoivent un <strong>bonus de lancement exclusif.</strong></p>
+<button class="submit-btn" onclick="document.querySelector('.input-field').focus()">
+🔥 JE VEUX DES MISSIONS MAINTENANT
+</button>
+</div>
+</div>
+
+<footer>
+<div style="margin-bottom:0.5rem;">
+<a href="#">CGU</a>
+<a href="#">Confidentialité</a>
+<a href="#">Contact</a>
+</div>
+© 2026 CleanConnect · Côte d'Azur 🌊
+</footer>
+</div>
+
+<script>
+function switchType(event, type) {
+document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+event.target.classList.add('active');
+const cityInput = document.getElementById('city-input');
+if (type === 'pro') {
+cityInput.placeholder = 'Votre zone (Nice, Cannes, Antibes...)';
+} else {
+cityInput.placeholder = 'Votre ville (Nice, Cannes...)';
+}
+}
+
+function handleSubmit() {
+const inputs = document.querySelectorAll('.input-field');
+let valid = true;
+
+inputs.forEach(i => {
+if (!i.value.trim()) valid = false;
+});
+
+if (!valid) {
+inputs.forEach(i => {
+if (!i.value.trim()) i.style.borderColor = 'rgba(255,107,107,0.5)';
+else i.style.borderColor = 'rgba(0,229,195,0.4)';
+});
+return;
+}
+
+document.querySelector('.submit-btn').textContent = '✅ Inscrit !';
+document.querySelector('.submit-btn').style.background = '#00C4A7';
+document.getElementById('success-msg').classList.add('show');
+
+const counter = document.querySelector('.social-text');
+counter.innerHTML = '<strong>248 personnes</strong> déjà inscrites 🔥';
+}
+
+function updateCountdown() {
+const launch = new Date('2026-04-01T00:00:00');
+const now = new Date();
+const diff = launch - now;
+
+if (diff <= 0) {
+document.getElementById('countdown').innerHTML = '<div style="color:#00E5C3;font-weight:700;font-size:1.2rem;">🚀 CleanConnect est lancé !</div>';
+return;
+}
+
+const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+document.getElementById('days').textContent = String(days).padStart(2, '0');
+document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+</body>
+</html>

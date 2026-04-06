@@ -183,7 +183,7 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   <h1><span class="l1">Le ménage premium</span><span class="l2">enfin réinventé.</span></h1>
   <p class="hero-sub">CleanConnect connecte des clients exigeants avec des professionnels d'élite. Cannes, Nice, Antibes, Monaco — votre maison mérite le meilleur.</p>
   <div class="hero-btns">
-    <a href="#signup" class="btn-main">Je veux en être ✨</a>
+    <a href="#signup" class="btn-main">Je rejoins la liste ✨</a>
     <a href="#pros" class="btn-out">Je suis professionnel →</a>
   </div>
   <div class="hero-stats">
@@ -264,9 +264,15 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <a href="#" class="cta-card"><span class="cc-icon">🏠</span><div class="cc-title">Je suis client</div><div class="cc-sub">Je veux réserver un professionnel du ménage</div></a>
       <a href="#" class="cta-card"><span class="cc-icon">🧹</span><div class="cc-title">Je suis professionnel</div><div class="cc-sub">Je veux rejoindre le réseau CleanConnect</div></a>
     </div>
-    <div class="cta-form">
-      <input class="cta-inp" type="email" placeholder="Votre email…" id="ei">
-      <button class="cta-btn" onclick="go(this)">Je m'inscris →</button>
+    <div class="cta-form" style="flex-direction:column;gap:12px;max-width:440px;margin:0 auto;">
+      <div style="display:flex;gap:10px;">
+        <input class="cta-inp" type="text" placeholder="Votre prénom…" id="ep">
+        <input class="cta-inp" type="tel" placeholder="Votre téléphone…" id="et">
+      </div>
+      <div style="display:flex;gap:10px;">
+        <input class="cta-inp" type="email" placeholder="Votre email…" id="ei">
+        <button class="cta-btn" onclick="go(this)">Je m'inscris →</button>
+      </div>
     </div>
     <p class="cta-note">Gratuit · Sans engagement · Côte d'Azur</p>
   </div>
@@ -380,15 +386,17 @@ const SUPABASE_KEY = 'sb_publishable_83NVj2lPgTMsKlAySPkbKw_tlU78b3-';
 async function go(btn) {
   const inp = document.getElementById('ei');
   const email = inp.value.trim();
+  const prenom = document.getElementById('ep').value.trim();
+  const telephone = document.getElementById('et').value.trim();
   if(!email.includes('@')){ inp.style.borderColor='#f43f5e'; setTimeout(()=>inp.style.borderColor='',1500); return; }
   btn.textContent='⏳...'; btn.disabled=true;
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
       method:'POST',
       headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':`Bearer ${SUPABASE_KEY}`,'Prefer':'return=minimal'},
-      body:JSON.stringify({email})
+      body:JSON.stringify({email, prenom, telephone})
     });
-    if(res.ok||res.status===201){ btn.textContent='✅ Inscrit !'; btn.style.background='#10b981'; inp.value=''; }
+    if(res.ok||res.status===201){ btn.textContent='✅ Inscrit !'; btn.style.background='#10b981'; inp.value=''; document.getElementById('ep').value=''; document.getElementById('et').value=''; }
     else { const d=await res.json(); btn.textContent=d.code==='23505'?'📧 Déjà inscrit !':'❌ Erreur'; btn.style.background='#f59e0b'; }
   } catch(e){ btn.textContent='❌ Erreur'; btn.style.background='#f43f5e'; }
   setTimeout(()=>{ btn.textContent='Je m\'inscris →'; btn.style.background=''; btn.disabled=false; },3000);

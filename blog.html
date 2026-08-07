@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Conseils ménage, Airbnb & entretien | CleanConnect</title>
+<meta name="description" content="Conseils pratiques sur le ménage à domicile, la gestion Airbnb et l'entretien de votre logement sur la Côte d'Azur.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:#0d9488; --teal2:#14b8a6; --teal3:#5eead4;
+  --violet:#7c3aed; --vio2:#a78bfa;
+  --dark:#050d1a;
+  --grad:linear-gradient(135deg,#0d9488 0%,#7c3aed 100%);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Nunito',sans-serif;background:var(--dark);color:white;overflow-x:hidden;line-height:1.6;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+.container{max-width:1000px;margin:0 auto;padding:0 28px;}
+
+nav{position:sticky;top:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,13,26,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);}
+.nav-brand{font-size:1.1rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-size:0.85rem;font-weight:700;color:rgba(255,255,255,0.6);text-decoration:none;}
+.nav-links a:hover{color:var(--teal3);}
+.nav-cta{background:var(--grad);color:white!important;padding:10px 24px;border-radius:100px;font-weight:800!important;}
+@media(max-width:760px){.nav-links a:not(.nav-cta){display:none;}}
+
+.hero{padding:90px 24px 60px;text-align:center;}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:8px 20px;font-size:0.8rem;font-weight:800;color:var(--teal3);margin-bottom:24px;letter-spacing:0.05em;text-transform:uppercase;}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;margin-bottom:16px;letter-spacing:-0.02em;}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,0.55);font-weight:600;max-width:520px;margin:0 auto;}
+
+.articles{padding:20px 0 100px;}
+.article-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+.article-card{display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px;text-decoration:none;color:white;transition:all .2s;}
+.article-card:hover{border-color:rgba(13,148,136,0.3);transform:translateY(-3px);}
+.article-tag{display:inline-block;font-size:0.72rem;font-weight:800;color:var(--teal3);background:rgba(13,148,136,0.1);padding:5px 12px;border-radius:100px;margin-bottom:14px;letter-spacing:0.04em;text-transform:uppercase;}
+.article-title{font-size:1.4rem;font-weight:800;margin-bottom:10px;line-height:1.3;}
+.article-excerpt{font-size:0.92rem;color:rgba(255,255,255,0.55);font-weight:600;line-height:1.7;margin-bottom:14px;}
+.article-meta{font-size:0.78rem;color:rgba(255,255,255,0.35);font-weight:700;}
+
+footer{border-top:1px solid rgba(255,255,255,0.06);padding:40px 28px;text-align:center;color:rgba(255,255,255,0.3);font-size:0.8rem;font-weight:600;}
+footer a{color:rgba(255,255,255,0.5);text-decoration:none;}
+footer a:hover{color:var(--teal3);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">CleanConnect</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="tarifs.html">Tarifs</a></li>
+    <li><a href="devenir-pro.html">Devenir Pro</a></li>
+    <li><a href="conciergeries.html">Conciergeries</a></li>
+    <li><a href="index.html#signup" class="nav-cta">Rejoindre →</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">✦ Le blog CleanConnect</div>
+  <h1>Conseils ménage & Airbnb</h1>
+  <p>Des réponses concrètes à vos questions sur l'entretien de votre logement, la gestion locative et le recours à une professionnelle.</p>
+</header>
+
+<section class="articles">
+  <div class="container">
+    <div class="article-grid">
+
+      <a href="blog-tarif-femme-menage-cannes.html" class="article-card">
+        <span class="article-tag">Tarifs</span>
+        <h2 class="article-title">Combien coûte une femme de ménage à Cannes en 2026 ?</h2>
+        <p class="article-excerpt">Tarifs horaires, ce qui fait varier le prix, et comment comparer les offres sur la Côte d'Azur avant de réserver.</p>
+        <div class="article-meta">7 min de lecture</div>
+      </a>
+
+      <a href="blog-checklist-menage-airbnb.html" class="article-card">
+        <span class="article-tag">Airbnb</span>
+        <h2 class="article-title">La checklist ménage Airbnb entre deux locataires</h2>
+        <p class="article-excerpt">Les points à ne jamais oublier pour un turnover réussi et des avis 5 étoiles, zone par zone du logement.</p>
+        <div class="article-meta">6 min de lecture</div>
+      </a>
+
+      <a href="blog-declarer-femme-menage.html" class="article-card">
+        <span class="article-tag">Pratique</span>
+        <h2 class="article-title">Faut-il déclarer sa femme de ménage ? Ce qu'il faut savoir</h2>
+        <p class="article-excerpt">La différence entre passer par une plateforme et embaucher en direct, et ce que ça change pour vous.</p>
+        <div class="article-meta">5 min de lecture</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 CleanConnect · Mandelieu-la-Napoule · <a href="mailto:contact@mycleanconnect.fr">contact@mycleanconnect.fr</a></p>
+  <p style="margin-top:8px"><a href="cgu.html">CGU</a> · <a href="index.html">Retour à l'accueil</a></p>
+</footer>
+
+</body>
+</html>

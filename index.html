@@ -16,7 +16,6 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Nunito',sans-serif;background:var(--dark);color:white;overflow-x:hidden;}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,13,26,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);}
 .nav-brand{font-size:1.1rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
@@ -24,7 +23,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .nav-links a:hover{color:var(--teal3);}
 .nav-cta{background:var(--grad);color:white!important;padding:10px 24px;border-radius:100px;font-weight:800!important;box-shadow:0 4px 20px rgba(13,148,136,0.35);}
 
-/* HERO */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px;position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 20% 40%,rgba(13,148,136,0.15) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 60%,rgba(124,58,237,0.18) 0%,transparent 60%);}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:8px 20px;font-size:0.8rem;font-weight:800;color:var(--teal3);margin-bottom:32px;position:relative;z-index:1;letter-spacing:0.05em;text-transform:uppercase;animation:fadeUp .6s ease both;}
 .bdot{width:8px;height:8px;border-radius:50%;background:var(--teal2);animation:pulse 2s infinite;}
@@ -45,12 +43,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .hdiv{width:1px;height:40px;background:rgba(255,255,255,0.1);}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 
-/* BAND */
 .band{background:var(--grad);padding:14px 0;overflow:hidden;white-space:nowrap;}
 .band-inner{display:inline-flex;gap:48px;animation:scroll 20s linear infinite;font-size:0.82rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* MAP */
 .map-sec{padding:100px 48px;}
 .map-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
 .stag{font-size:0.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal3);margin-bottom:16px;display:block;}
@@ -62,7 +58,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .feat-title{font-size:0.9rem;font-weight:800;margin-bottom:2px;}
 .feat-sub{font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:600;}
 
-/* GPS MAP */
 .map-box{position:relative;border-radius:24px;overflow:hidden;background:#0a1628;border:1px solid rgba(255,255,255,0.08);box-shadow:0 32px 80px rgba(0,0,0,0.5);height:420px;}
 .road{position:absolute;background:rgba(255,255,255,0.05);border-radius:2px;}
 .rh1{width:100%;height:2px;top:35%;}
@@ -83,11 +78,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .plbl{background:rgba(10,22,40,0.92);border:1px solid rgba(13,148,136,0.4);border-radius:8px;padding:4px 10px;font-size:0.65rem;font-weight:800;color:var(--teal3);margin-top:6px;white-space:nowrap;}
 .map-online{position:absolute;top:16px;left:16px;background:rgba(10,22,40,0.9);border:1px solid rgba(13,148,136,0.3);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:700;}
 .odot{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;animation:pulse 2s infinite;}
-.map-cnt{position:absolute;bottom:16px;right:16px;background:rgba(10,22,40,0.9);border:1px solid rgba(124,58,237,0.3);border-radius:12px;padding:10px 16px;text-align:center;}
-.cnt-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
-.cnt-lbl{font-size:0.65rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:.06em;}
 
-/* PRO */
 .pro-sec{padding:100px 48px;background:linear-gradient(180deg,transparent 0%,rgba(13,148,136,0.05) 50%,transparent 100%);}
 .pro-in{max-width:1100px;margin:0 auto;}
 .pro-head{text-align:center;margin-bottom:64px;}
@@ -104,7 +95,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .earn-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
 .earn-lbl{font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.5);margin-top:6px;text-transform:uppercase;letter-spacing:.05em;}
 
-/* CTA */
 .cta-sec{padding:120px 48px;position:relative;overflow:hidden;text-align:center;}
 .cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(13,148,136,0.2) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 70% 50%,rgba(124,58,237,0.2) 0%,transparent 60%);}
 .cta-in{max-width:700px;margin:0 auto;position:relative;z-index:1;}
@@ -125,7 +115,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(13,148,136,0.4);}
 .cta-note{font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.3);margin-top:16px;}
 
-/* FOOTER */
 footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
 .foot-brand{font-size:0.9rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .foot-links{display:flex;gap:24px;}
@@ -133,7 +122,6 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 .foot-links a:hover{color:var(--teal3);}
 .foot-copy{font-size:0.75rem;color:rgba(255,255,255,0.25);font-weight:600;}
 
-/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:999;display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(8px);}
 .modal-overlay.open{display:flex;}
 .modal{background:#0d1b2e;border:1px solid rgba(255,255,255,0.1);border-radius:20px;max-width:720px;width:100%;max-height:80vh;overflow:hidden;display:flex;flex-direction:column;}
@@ -145,12 +133,12 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 .modal-body h3{font-size:1rem;font-weight:800;color:white;margin:20px 0 8px;}
 .modal-body h3:first-child{margin-top:0;}
 .modal-body p{margin-bottom:12px;}
+.modal-link{display:inline-block;margin-top:8px;color:var(--teal3);font-weight:800;text-decoration:none;border-bottom:1px solid rgba(94,234,212,0.4);}
+.modal-link:hover{border-bottom-color:var(--teal3);}
 
-/* REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.visible{opacity:1;transform:none;}
 
-/* RESPONSIVE */
 @media(max-width:768px){
   nav{padding:16px 20px;}
   .nav-links{display:none;}
@@ -173,25 +161,26 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   <ul class="nav-links">
     <li><a href="#map">Comment ça marche</a></li>
     <li><a href="#pros">Devenir Pro</a></li>
+    <li><a href="conciergeries.html">Conciergeries</a></li>
     <li><a href="#signup">S'inscrire</a></li>
     <li><a href="#signup" class="nav-cta">Rejoindre →</a></li>
   </ul>
 </nav>
 
 <section class="hero">
-  <div class="hero-badge"><div class="bdot"></div>Bientôt disponible sur la Côte d'Azur</div>
+  <div class="hero-badge"><div class="bdot"></div>Le réseau national du ménage nouvelle génération</div>
   <h1><span class="l1">Le ménage premium</span><span class="l2">enfin réinventé.</span></h1>
-  <p class="hero-sub">CleanConnect connecte des clients exigeants avec des professionnels d'élite. Alpes-Maritimes — votre maison mérite le meilleur.</p>
+  <p class="hero-sub">CleanConnect lance son réseau de professionnels d'élite en Côte d'Azur, avec l'ambition de couvrir toute la France. Votre maison mérite le meilleur — où que vous soyez.</p>
   <div class="hero-btns">
     <a href="#signup" class="btn-main">Je rejoins la liste ✨</a>
     <a href="#pros" class="btn-out">Je suis professionnel →</a>
   </div>
   <div class="hero-stats">
-    <div class="hstat"><div class="hnum">250+</div><div class="hlbl">Inscrits</div></div>
+    <div class="hstat"><div class="hnum" id="waitlist-count">250+</div><div class="hlbl">Inscrits en France</div></div>
     <div class="hdiv"></div>
-    <div class="hstat"><div class="hnum">06</div><div class="hlbl">Alpes-Maritimes</div></div>
+    <div class="hstat"><div class="hnum">1ère</div><div class="hlbl">Ville active : Côte d'Azur</div></div>
     <div class="hdiv"></div>
-    <div class="hstat"><div class="hnum">25€</div><div class="hlbl">Dès /heure</div></div>
+    <div class="hstat"><div class="hnum">30€</div><div class="hlbl">Dès /heure</div></div>
     <div class="hdiv"></div>
     <div class="hstat"><div class="hnum">3min</div><div class="hlbl">Pour réserver</div></div>
   </div>
@@ -199,9 +188,9 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 
 <div class="band">
   <div class="band-inner">
-    <span>✦ Alpes-Maritimes</span><span>✦ Nice</span><span>✦ Cannes</span><span>✦ Antibes</span><span>✦ Monaco</span><span>✦ Menton</span><span>✦ Grasse</span><span>✦ Cagnes-sur-Mer</span>
+    <span>✦ ACTIF : Côte d'Azur</span><span>✦ BIENTÔT : Paris</span><span>✦ BIENTÔT : Lyon</span><span>✦ BIENTÔT : Marseille</span><span>✦ BIENTÔT : Bordeaux</span><span>✦ BIENTÔT : Lille</span>
     <span>✦ Pros vérifiés</span><span>✦ 7j/7</span><span>✦ Paiement sécurisé</span><span>✦ Dispatch instantané</span>
-    <span>✦ Alpes-Maritimes</span><span>✦ Nice</span><span>✦ Cannes</span><span>✦ Antibes</span><span>✦ Monaco</span><span>✦ Menton</span><span>✦ Grasse</span><span>✦ Cagnes-sur-Mer</span>
+    <span>✦ ACTIF : Côte d'Azur</span><span>✦ BIENTÔT : Paris</span><span>✦ BIENTÔT : Lyon</span><span>✦ BIENTÔT : Marseille</span><span>✦ BIENTÔT : Bordeaux</span><span>✦ BIENTÔT : Lille</span>
     <span>✦ Pros vérifiés</span><span>✦ 7j/7</span><span>✦ Paiement sécurisé</span><span>✦ Dispatch instantané</span>
   </div>
 </div>
@@ -210,8 +199,8 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   <div class="map-in">
     <div class="reveal">
       <span class="stag">En temps réel</span>
-      <h2 class="sh2">Vos pros,<br><em>partout sur la Côte.</em></h2>
-      <p class="sp">Notre technologie localise et dispatche le meilleur professionnel disponible près de vous en quelques secondes. Comme Uber, mais pour votre intérieur.</p>
+      <h2 class="sh2">Vos pros,<br><em>partout où on est.</em></h2>
+      <p class="sp">Notre technologie localise et dispatche le meilleur professionnel disponible près de vous en quelques secondes. Comme Uber, mais pour votre intérieur. Lancé sur la Côte d'Azur, pensé pour la France entière.</p>
       <div class="feat-item"><div class="feat-icon">⚡</div><div><div class="feat-title">Dispatch automatique</div><div class="feat-sub">Le meilleur pro disponible assigné instantanément</div></div></div>
       <div class="feat-item"><div class="feat-icon">📍</div><div><div class="feat-title">Suivi GPS en direct</div><div class="feat-sub">Sachez exactement où en est votre pro</div></div></div>
       <div class="feat-item"><div class="feat-icon">🛡️</div><div><div class="feat-title">Pros certifiés & assurés</div><div class="feat-sub">Chaque professionnel est vérifié et noté</div></div></div>
@@ -221,13 +210,10 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <div class="road rv1"></div><div class="road rv2"></div>
       <div class="cglow g1"></div><div class="cglow g2"></div>
       <div class="cglow g3"></div><div class="cglow g4"></div>
-      <div class="pin" style="bottom:28%;left:22%"><div class="pdot"></div><div class="plbl">Sophie M. 🧹</div></div>
-      <div class="pin" style="top:30%;right:28%"><div class="pdot" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)"></div><div class="plbl" style="border-color:rgba(124,58,237,0.4);color:#c4b5fd">Amira K. 🧹</div></div>
-      <div class="pin" style="top:52%;left:48%"><div class="pdot" style="background:linear-gradient(135deg,#14b8a6,#5eead4)"></div><div class="plbl" style="border-color:rgba(20,184,166,0.4);color:#5eead4">Marie L. 🧹</div></div>
-      <div class="pin" style="top:20%;left:60%"><div class="pdot"></div><div class="plbl">Yasmine B. 🧹</div></div>
-      <div class="pin" style="bottom:15%;right:20%"><div class="pdot" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)"></div><div class="plbl" style="border-color:rgba(245,158,11,0.4);color:#fbbf24">Nadia R. 🧹</div></div>
-      <div class="map-online"><div class="odot"></div>5 pros en ligne maintenant</div>
-      <div class="map-cnt"><div class="cnt-num" id="mc">12</div><div class="cnt-lbl">missions aujourd'hui</div></div>
+      <div class="pin" style="bottom:28%;left:22%"><div class="pdot"></div><div class="plbl">Pro disponible</div></div>
+      <div class="pin" style="top:30%;right:28%"><div class="pdot" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)"></div><div class="plbl" style="border-color:rgba(124,58,237,0.4);color:#c4b5fd">Pro disponible</div></div>
+      <div class="pin" style="top:52%;left:48%"><div class="pdot" style="background:linear-gradient(135deg,#14b8a6,#5eead4)"></div><div class="plbl" style="border-color:rgba(20,184,166,0.4);color:#5eead4">Pro disponible</div></div>
+      <div class="map-online"><div class="odot"></div>Réseau en expansion sur le 06</div>
     </div>
   </div>
 </section>
@@ -242,15 +228,15 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <div class="pro-grid">
       <div class="pro-card reveal"><div class="picon">💎</div><h3>Une clientèle d'exception</h3><p>Villas, appartements de standing, locations Airbnb haut de gamme. Travaillez pour les meilleurs, soyez reconnue à votre juste valeur.</p></div>
       <div class="pro-card reveal" style="transition-delay:.1s"><div class="picon">📅</div><h3>Votre agenda, vos règles</h3><p>Acceptez ou refusez les missions selon vos disponibilités. Aucune obligation, aucun supérieur. Vous êtes votre propre patronne.</p></div>
-      <div class="pro-card reveal" style="transition-delay:.2s"><div class="picon">💸</div><h3>Paiement rapide & sécurisé</h3><p>Fini les impayés. Votre rémunération est sécurisée dès la réservation. Payée dans les 48h après chaque mission.</p></div>
+      <div class="pro-card reveal" style="transition-delay:.2s"><div class="picon">💸</div><h3>Paiement rapide & sécurisé</h3><p>Fini les impayés. Votre rémunération est sécurisée dès la réservation. Payée sous 72h après chaque mission.</p></div>
       <div class="pro-card reveal" style="transition-delay:.3s"><div class="picon">🚀</div><h3>Zéro démarchage</h3><p>On s'occupe de trouver les clients. Vous, vous faites ce que vous faites de mieux. Concentrez-vous sur votre métier.</p></div>
       <div class="pro-card reveal" style="transition-delay:.4s"><div class="picon">⭐</div><h3>Construisez votre réputation</h3><p>Chaque mission bien réalisée renforce votre profil. Les meilleures pros sont mises en avant et reçoivent plus de missions.</p></div>
       <div class="pro-card reveal" style="transition-delay:.5s"><div class="picon">🤝</div><h3>Une communauté qui vous soutient</h3><p>Rejoignez un réseau de professionnelles sérieuses et ambitieuses. Partagez, progressez, évoluez ensemble.</p></div>
     </div>
     <div class="earnings reveal">
-      <div><div class="earn-num">25€</div><div class="earn-lbl">Ménage classique / heure</div></div>
-      <div><div class="earn-num">30€</div><div class="earn-lbl">Remise en état Airbnb / heure</div></div>
-      <div><div class="earn-num">35€</div><div class="earn-lbl">Grand nettoyage / heure</div></div>
+      <div><div class="earn-num">30€</div><div class="earn-lbl">Ménage classique / heure</div></div>
+      <div><div class="earn-num">35€</div><div class="earn-lbl">Remise en état Airbnb / heure</div></div>
+      <div><div class="earn-num">40€</div><div class="earn-lbl">Grand nettoyage / heure</div></div>
     </div>
   </div>
 </section>
@@ -258,8 +244,8 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 <section class="cta-sec" id="signup">
   <div class="cta-bg"></div>
   <div class="cta-in reveal">
-    <h2>Prête à rejoindre<br><em>l'aventure ?</em></h2>
-    <p>Que vous soyez client ou professionnel, CleanConnect va changer votre quotidien. Inscrivez-vous maintenant.</p>
+    <h2>Prêt à rejoindre<br><em>le mouvement ?</em></h2>
+    <p>CleanConnect est actif sur la Côte d'Azur et se déploie prochainement dans toute la France. Indiquez votre ville pour être prévenu en priorité.</p>
     <div class="cta-dual">
       <a href="#" class="cta-card"><span class="cc-icon">🏠</span><div class="cc-title">Je suis client</div><div class="cc-sub">Je veux réserver un professionnel du ménage</div></a>
       <a href="#" class="cta-card"><span class="cc-icon">🧹</span><div class="cc-title">Je suis professionnel</div><div class="cc-sub">Je veux rejoindre le réseau CleanConnect</div></a>
@@ -270,11 +256,22 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
         <input class="cta-inp" type="tel" placeholder="Votre téléphone…" id="et">
       </div>
       <div style="display:flex;gap:10px;">
+        <select class="cta-inp" id="ev" style="cursor:pointer;">
+          <option value="Côte d'Azur">Côte d'Azur (actif)</option>
+          <option value="Paris">Paris</option>
+          <option value="Lyon">Lyon</option>
+          <option value="Marseille">Marseille</option>
+          <option value="Bordeaux">Bordeaux</option>
+          <option value="Lille">Lille</option>
+          <option value="Autre">Autre ville</option>
+        </select>
+      </div>
+      <div style="display:flex;gap:10px;">
         <input class="cta-inp" type="email" placeholder="Votre email…" id="ei">
         <button class="cta-btn" onclick="go(this)">Je m'inscris →</button>
       </div>
     </div>
-    <p class="cta-note">Gratuit · Sans engagement · Côte d'Azur</p>
+    <p class="cta-note">Gratuit · Sans engagement · Actif en Côte d'Azur, ouverture progressive en France</p>
   </div>
 </section>
 
@@ -284,13 +281,12 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <a onclick="openModal('cgu')">CGU</a>
     <a onclick="openModal('ml')">Mentions légales</a>
     <a onclick="openModal('rgpd')">RGPD</a>
-    <a href="/cdn-cgi/l/email-protection#bbd8d4d5cfdad8cffbd6c2d8d7dedad5d8d4d5d5ded8cf95ddc9">Contact</a>
+    <a href="mailto:contact@mycleanconnect.fr">Contact</a>
     <a href="https://instagram.com/cleanconnectapp" target="_blank">Instagram</a>
   </div>
   <div class="foot-copy">© 2026 CleanConnect · Mandelieu-la-Napoule</div>
 </footer>
 
-<!-- MODAL CGU -->
 <div class="modal-overlay" id="modal-cgu">
   <div class="modal">
     <div class="modal-header">
@@ -298,25 +294,14 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <button class="modal-close" onclick="closeModal('cgu')">×</button>
     </div>
     <div class="modal-body">
-      <h3>1. Objet</h3>
-      <p>Les présentes Conditions Générales d'Utilisation (CGU) régissent l'utilisation de la plateforme CleanConnect, accessible via l'application mobile et le site mycleanconnect.fr, exploitée par Hélia Benameur, auto-entrepreneuse, SIRET 928 797 000 000 17, domiciliée à Mandelieu-la-Napoule (06210).</p>
-      <h3>2. Accès à la plateforme</h3>
-      <p>L'accès à CleanConnect est réservé aux personnes majeures. L'inscription est gratuite pour les clients. Les prestataires s'engagent à disposer d'un statut légal (auto-entrepreneur ou équivalent) pour exercer leur activité.</p>
-      <h3>3. Services proposés</h3>
-      <p>CleanConnect est une plateforme de mise en relation entre des clients particuliers et des professionnels du ménage. CleanConnect n'est pas employeur des prestataires, qui exercent en tant qu'indépendants.</p>
-      <h3>4. Tarifs</h3>
-      <p>Les tarifs applicables sont : 25€/h pour un ménage classique, 30€/h pour une remise en état Airbnb, 35€/h pour un grand nettoyage. Ces tarifs sont susceptibles d'évoluer.</p>
-      <h3>5. Responsabilité</h3>
-      <p>CleanConnect agit en qualité d'intermédiaire. La responsabilité de CleanConnect ne saurait être engagée en cas de dommage causé par un prestataire lors d'une mission. Chaque prestataire est responsable de disposer d'une assurance RC Pro.</p>
-      <h3>6. Données personnelles</h3>
-      <p>Les données collectées sont traitées conformément à notre politique RGPD. Pour toute demande : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1e7d71706a7f7d6a5e73677d727b7f707d7170707b7d6a30786c">[email&#160;protected]</a></p>
-      <h3>7. Droit applicable</h3>
-      <p>Les présentes CGU sont soumises au droit français. Tout litige relève de la compétence des tribunaux français.</p>
+      <h3>En bref</h3>
+      <p>CleanConnect est une plateforme de mise en relation entre clients particuliers et professionnels du ménage indépendants sur la Côte d'Azur. Tarifs applicables : 30€/h (entretien), 35€/h (Airbnb), 40€/h (deep cleaning), majoration urgence +30%.</p>
+      <p>CleanConnect agit en qualité d'intermédiaire et n'est pas employeur des prestataires. Le détail complet des conditions est disponible sur la page dédiée.</p>
+      <a href="cgu.html" class="modal-link">Lire les CGU complètes →</a>
     </div>
   </div>
 </div>
 
-<!-- MODAL MENTIONS LÉGALES -->
 <div class="modal-overlay" id="modal-ml">
   <div class="modal">
     <div class="modal-header">
@@ -326,11 +311,11 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <div class="modal-body">
       <h3>Éditeur du site</h3>
       <p>CleanConnect est édité par :<br>
-      <strong>H.Benameur</strong><br>
+      <strong>H. Benameur</strong><br>
       Auto-entrepreneuse<br>
-      SIRET : 928 797 000 000 17<br>
+      SIRET : 928 797 000 00017<br>
       Adresse : Mandelieu-la-Napoule, 06210<br>
-      Email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="583b37362c393b2c1835213b343d39363b3736363d3b2c763e2a">[email&#160;protected]</a></p>
+      Email : <a href="mailto:contact@mycleanconnect.fr" style="color:var(--teal3)">contact@mycleanconnect.fr</a></p>
       <h3>Hébergement</h3>
       <p>Le site mycleanconnect.fr est hébergé par :<br>
       <strong>GitHub Pages</strong> – GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
@@ -339,12 +324,11 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <h3>Marque</h3>
       <p>La marque CleanConnect est en cours de dépôt à l'INPI. Toute utilisation non autorisée est prohibée.</p>
       <h3>Contact</h3>
-      <p>Pour toute question : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aac9c5c4decbc9deeac7d3c9c6cfcbc4c9c5c4c4cfc9de84ccd8">[email&#160;protected]</a></p>
+      <p>Pour toute question : <a href="mailto:contact@mycleanconnect.fr" style="color:var(--teal3)">contact@mycleanconnect.fr</a></p>
     </div>
   </div>
 </div>
 
-<!-- MODAL RGPD -->
 <div class="modal-overlay" id="modal-rgpd">
   <div class="modal">
     <div class="modal-header">
@@ -353,7 +337,7 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     </div>
     <div class="modal-body">
       <h3>Responsable du traitement</h3>
-      <p>H.Benameur – <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b2824253f2a283f0b263228272e2a25282425252e283f652d39">[email&#160;protected]</a> – SIRET 928 797 000 000 17</p>
+      <p>H. Benameur – <a href="mailto:contact@mycleanconnect.fr" style="color:var(--teal3)">contact@mycleanconnect.fr</a> – SIRET 928 797 000 00017</p>
       <h3>Données collectées</h3>
       <p>CleanConnect collecte les données suivantes : nom, prénom, adresse email, numéro de téléphone, adresse postale, et pour les prestataires, les documents justificatifs d'activité.</p>
       <h3>Finalités du traitement</h3>
@@ -363,58 +347,68 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
       <h3>Conservation des données</h3>
       <p>Les données sont conservées pendant la durée de la relation contractuelle, puis 3 ans à des fins de prospection commerciale.</p>
       <h3>Vos droits</h3>
-      <p>Conformément au RGPD, vous disposez des droits d'accès, rectification, suppression, opposition et portabilité de vos données. Pour exercer ces droits : <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dfbcb0b1abbebcab9fb2a6bcb3babeb1bcb0b1b1babcabf1b9ad">[email&#160;protected]</a></p>
+      <p>Conformément au RGPD, vous disposez des droits d'accès, rectification, suppression, opposition et portabilité de vos données. Pour exercer ces droits : <a href="mailto:contact@mycleanconnect.fr" style="color:var(--teal3)">contact@mycleanconnect.fr</a></p>
       <h3>Cookies</h3>
       <p>Le site n'utilise pas de cookies de traçage. Seuls des cookies techniques essentiels au fonctionnement peuvent être utilisés.</p>
     </div>
   </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Reveal
+<script>
 const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:.12});
 document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
 
-// Counter
-let c = 12;
-setInterval(() => { if(Math.random()>.7){ c++; const el=document.getElementById('mc'); if(el) el.textContent=c; } }, 4000);
-
-// Supabase
 const SUPABASE_URL = 'https://zzkitwxvzjsgwgguynlr.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_83NVj2lPgTMsKlAySPkbKw_tlU78b3-';
+
+// Compteur réel — récupère le vrai nombre d'inscrits sur la table waitlist (pas de chiffre inventé)
+async function loadRealCount() {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist?select=id`, {
+      method: 'HEAD',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Prefer': 'count=exact'
+      }
+    });
+    const range = res.headers.get('content-range'); // format "0-9/250"
+    if (range) {
+      const total = parseInt(range.split('/')[1], 10);
+      if (!isNaN(total) && total > 0) {
+        document.getElementById('waitlist-count').textContent = total + '+';
+      }
+    }
+  } catch (e) {
+    // en cas d'échec, on garde la valeur statique déjà affichée dans le HTML
+  }
+}
+loadRealCount();
 
 async function go(btn) {
   const inp = document.getElementById('ei');
   const email = inp.value.trim();
   const prenom = document.getElementById('ep').value.trim();
   const telephone = document.getElementById('et').value.trim();
+  const ville = document.getElementById('ev').value;
   if(!email.includes('@')){ inp.style.borderColor='#f43f5e'; setTimeout(()=>inp.style.borderColor='',1500); return; }
   btn.textContent='⏳...'; btn.disabled=true;
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/waitlist`, {
       method:'POST',
       headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':`Bearer ${SUPABASE_KEY}`,'Prefer':'return=minimal'},
-      body:JSON.stringify({email, prenom, telephone})
+      body:JSON.stringify({email, prenom, telephone, ville})
     });
-    if(res.ok||res.status===201){ btn.textContent='✅ Inscrit !'; btn.style.background='#10b981'; inp.value=''; document.getElementById('ep').value=''; document.getElementById('et').value=''; }
+    if(res.ok||res.status===201){ btn.textContent='✅ Inscrit !'; btn.style.background='#10b981'; inp.value=''; document.getElementById('ep').value=''; document.getElementById('et').value=''; loadRealCount(); }
     else { const d=await res.json(); btn.textContent=d.code==='23505'?'📧 Déjà inscrit !':'❌ Erreur'; btn.style.background='#f59e0b'; }
   } catch(e){ btn.textContent='❌ Erreur'; btn.style.background='#f43f5e'; }
   setTimeout(()=>{ btn.textContent='Je m\'inscris →'; btn.style.background=''; btn.disabled=false; },3000);
 }
 
-function _old_go(btn) {
-  const inp = document.getElementById('ei');
-  if(!inp.value.includes('@')){ inp.style.borderColor='#f43f5e'; setTimeout(()=>inp.style.borderColor='',1500); return; }
-  btn.textContent='✅ Inscrit !'; btn.style.background='#10b981'; inp.value='';
-  setTimeout(()=>{ btn.textContent='Je m\'inscris →'; btn.style.background=''; },3000);
-}
-
-// Modals
 function openModal(id) { document.getElementById('modal-'+id).classList.add('open'); document.body.style.overflow='hidden'; }
 function closeModal(id) { document.getElementById('modal-'+id).classList.remove('open'); document.body.style.overflow=''; }
 document.querySelectorAll('.modal-overlay').forEach(m => m.addEventListener('click', e => { if(e.target===m){ m.classList.remove('open'); document.body.style.overflow=''; } }));
 
-// Nav
 window.addEventListener('scroll',()=>{ document.querySelector('nav').style.borderBottomColor=window.scrollY>50?'rgba(255,255,255,0.1)':'rgba(255,255,255,0.06)'; });
 </script>
 </body>

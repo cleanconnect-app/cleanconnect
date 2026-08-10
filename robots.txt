@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Lien vers le plan du site
+Sitemap: https://mycleanconnect.fr/sitemap.xml

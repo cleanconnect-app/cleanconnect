@@ -94,12 +94,95 @@ footer a{color:rgba(255,255,255,0.5);text-decoration:none;}
       <p>CleanConnect propose des prestations Airbnb Turnover avec une check-list qualité systématique, disponibles en dernière minute si besoin.</p>
       <a href="tarifs.html">Voir l'offre Airbnb Turnover →</a>
     </div>
+    <!-- Bloc Lead Magnet / Formulaire de capture -->
+<div style="background-color: #f8fafc; border: 2px solid #0284c7; border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;">
+<h3 style="color: #0f172a; margin-top: 0;">📥 Téléchargez la Checklist Qualité 5★ (PDF Gratuit)</h3>
+<p style="color: #475569; font-size: 0.95rem;">
+Recevez instantanément la fiche au format PDF prêt à imprimer pour vos équipes de ménage.
+</p>
+
+<form id="leadForm" onsubmit="submitLead(event)" style="max-width: 400px; margin: 20px auto 0; display: flex; flex-direction: column; gap: 12px;">
+<input
+type="email"
+id="leadEmail"
+placeholder="Votre adresse e-mail professionnelle"
+required
+style="padding: 12px 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 1rem; outline: none;"
+/>
+<button
+type="submit"
+id="submitBtn"
+style="background-color: #0284c7; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s;"
+>
+Obtenir le PDF gratuit ➡️
+</button>
+</form>
+<p id="statusMessage" style="margin-top: 12px; font-size: 0.875rem; font-weight: 500;"></p>
+</div>
+
+
   </article>
 </div>
 
 <footer>
   <p>© 2026 CleanConnect · Mandelieu-la-Napoule · <a href="mailto:contact@mycleanconnect.fr">contact@mycleanconnect.fr</a></p>
 </footer>
+<!-- SDK Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+// Initialisation de Supabase
+const SUPABASE_URL = "https://zzkitwxvzjsgwgguynlr.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_83NVj2lPgTMsKlAySPkbKw_tlU78b3-";
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+async function submitLead(event) {
+event.preventDefault();
+
+const emailInput = document.getElementById('leadEmail');
+const submitBtn = document.getElementById('submitBtn');
+const statusMessage = document.getElementById('statusMessage');
+const email = emailInput.value.trim();
+
+if (!email) return;
+
+submitBtn.disabled = true;
+submitBtn.innerText = "Envoi en cours...";
+statusMessage.innerText = "";
+
+try {
+// 1. Enregistrement dans la table Supabase blog_leads
+const { error } = await supabaseClient
+.from('blog_leads')
+.insert([{ email: email }]);
+
+if (error) throw error;
+
+// 2. Message de succès
+statusMessage.style.color = "#16a34a";
+statusMessage.innerText = "✅ Merci ! Le téléchargement du PDF démarre automatiquement.";
+
+// 3. Déclenchement automatique du téléchargement du PDF
+const link = document.createElement('a');
+link.href = '/checklist-cleanconnect.pdf';
+link.download = 'Checklist-Qualite-CleanConnect.pdf';
+document.body.appendChild(link);
+link.click();
+document.body.removeChild(link);
+
+// Réinitialiser le champ
+emailInput.value = "";
+
+} catch (err) {
+console.error(err);
+statusMessage.style.color = "#dc2626";
+statusMessage.innerText = "Une erreur est survenue. Veuillez réessayer.";
+} finally {
+submitBtn.disabled = false;
+submitBtn.innerText = "Obtenir le PDF gratuit ➡️";
+}
+}
+</script>
 
 </body>
 </html>

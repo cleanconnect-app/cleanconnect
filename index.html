@@ -74,6 +74,8 @@ body{font-family:'Nunito',sans-serif;background:var(--dark);color:white;overflow
 
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,13,26,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.06);}
 .nav-brand{font-size:1.1rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;}
+.brand-mark{flex-shrink:0;display:block;}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
 .nav-links a{font-size:0.85rem;font-weight:700;color:rgba(255,255,255,0.6);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--teal3);}
@@ -92,6 +94,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .btn-main:hover{transform:translateY(-3px);box-shadow:0 16px 48px rgba(13,148,136,0.5);}
 .btn-out{color:rgba(255,255,255,0.7);font-size:0.95rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.15);padding:18px 32px;border-radius:100px;transition:all .2s;}
 .btn-out:hover{border-color:var(--teal2);color:var(--teal3);}
+.ent-hero-link{position:relative;z-index:1;margin:-48px 0 56px;font-size:0.88rem;font-weight:600;color:rgba(255,255,255,0.6);text-decoration:none;border:1px solid rgba(167,139,250,0.35);background:rgba(124,58,237,0.08);border-radius:100px;padding:10px 20px;animation:fadeUp .6s .35s ease both;transition:all .2s;}
+.ent-hero-link strong{color:var(--vio2);font-weight:800;}
+.ent-hero-link:hover{border-color:var(--vio2);color:white;}
 .hero-stats{display:flex;align-items:center;gap:48px;position:relative;z-index:1;animation:fadeUp .6s .4s ease both;}
 .hstat{text-align:center;}
 .hnum{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;letter-spacing:-0.04em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
@@ -151,6 +156,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 48px;display:fl
 .earn-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
 .earn-lbl{font-size:0.8rem;font-weight:700;color:rgba(255,255,255,0.5);margin-top:6px;text-transform:uppercase;letter-spacing:.05em;}
 
+.ent-sec{padding:100px 48px;}
+.ent-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center;}
+.ent-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:6px 16px;font-size:0.72rem;font-weight:800;color:var(--vio2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px;}
+.ent-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.ent-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:16px;}
+.ent-num{font-size:0.7rem;font-weight:900;letter-spacing:.1em;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px;display:block;}
+.ent-card{background:linear-gradient(135deg,rgba(13,148,136,0.12),rgba(124,58,237,0.12));border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:36px;box-shadow:0 32px 80px rgba(0,0,0,0.4);}
+.ent-card h3{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;line-height:1.15;margin-bottom:24px;}
+.ent-eng{display:flex;align-items:center;gap:18px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.08);}
+.ent-eng:last-of-type{border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:28px;}
+.ent-eng .earn-num{min-width:72px;text-align:center;}
+.ent-eng-t{font-size:0.9rem;font-weight:800;margin-bottom:2px;}
+.ent-eng-s{font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:600;}
+.ent-card .btn-main{display:block;text-align:center;}
+.ent-note{font-size:0.75rem;font-weight:600;color:rgba(255,255,255,0.35);margin-top:14px;text-align:center;}
+
 .cta-sec{padding:120px 48px;position:relative;overflow:hidden;text-align:center;}
 .cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 30% 50%,rgba(13,148,136,0.2) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 70% 50%,rgba(124,58,237,0.2) 0%,transparent 60%);}
 .cta-in{max-width:700px;margin:0 auto;position:relative;z-index:1;}
@@ -200,6 +221,9 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   .nav-links{display:none;}
   .map-in{grid-template-columns:1fr;gap:40px;}
   .pro-grid{grid-template-columns:1fr;}
+  .ent-in{grid-template-columns:1fr;gap:40px;}
+  .ent-list{grid-template-columns:1fr;}
+  .ent-sec{padding:72px 20px;}
   .earnings{grid-template-columns:1fr;gap:20px;}
   .cta-dual{grid-template-columns:1fr;}
   .cta-form{flex-direction:column;}
@@ -213,13 +237,14 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 <body>
 
 <nav>
-  <div class="nav-brand">CleanConnect</div>
+  <a href="#" class="brand" aria-label="CleanConnect, accueil"><svg class="brand-mark" width="40" height="32" viewBox="0 0 132 104" aria-hidden="true"><defs><linearGradient id="ccg-nav" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><path d="M20 74 V38 L56 10 L80 28" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter"/><path d="M98 6 C99.6 16 103.5 19.9 114 21.5 C103.5 23.1 99.6 27 98 37 C96.4 27 92.5 23.1 82 21.5 C92.5 19.9 96.4 16 98 6 Z" fill="#5eead4"/><g transform="rotate(-11 66 82)"><path d="M8 84 C30 66 58 64 80 71 C96 76 110 72 122 60 C113 80 95 90 72 86 C52 82 32 79 8 84 Z" fill="url(#ccg-nav)"/><path d="M30 96 C52 87 74 89 92 91 C105 92 114 87 124 77 C118 94 102 103 82 101 C64 99 48 95 30 96 Z" fill="#a78bfa"/></g></svg><span class="nav-brand">CleanConnect</span></a>
   <ul class="nav-links">
     <li><a href="#map">Comment ça marche</a></li>
     <li><a href="tarifs.html">Tarifs</a></li>
     <li><a href="devenir-pro.html">Devenir Pro</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="conciergeries.html">Conciergeries</a></li>
+    <li><a href="#entreprises">Entreprises</a></li>
     <li><a href="#signup">S'inscrire</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="#signup" class="nav-cta">Rejoindre →</a></li>
@@ -234,6 +259,7 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
     <a href="#signup" class="btn-main">Je rejoins la liste ✨</a>
     <a href="#pros" class="btn-out">Je suis professionnel →</a>
   </div>
+  <a href="#entreprises" class="ent-hero-link">Vous êtes un hôtel ou une entreprise ? <strong>Découvrez notre équipe dédiée →</strong></a>
   <div class="hero-stats">
     <div class="hstat"><div class="hnum" id="waitlist-count">250+</div><div class="hlbl">Inscrits en France</div></div>
     <div class="hdiv"></div>
@@ -300,6 +326,33 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
   </div>
 </section>
 
+<section class="ent-sec" id="entreprises">
+  <div class="ent-in">
+    <div class="reveal">
+      <div class="ent-badge"><div class="bdot"></div>Nouveau · Hôtels, résidences, bureaux</div>
+      <span class="stag">Pour les entreprises</span>
+      <h2 class="sh2">Une équipe dédiée,<br><em>à votre établissement.</em></h2>
+      <p class="sp">En plus de l'application, CleanConnect prépare une offre pour les professionnels : une équipe formée et encadrée, qui intervient chez vous selon un planning adapté à votre activité. Un contrat clair, un seul interlocuteur.</p>
+      <div class="ent-list">
+        <div class="ent-item"><span class="ent-num">01</span><div class="feat-title">Chambres d'hôtel</div><div class="feat-sub">Recouche, départs, linge, salles de bain</div></div>
+        <div class="ent-item"><span class="ent-num">02</span><div class="feat-title">Remise en état</div><div class="feat-sub">Entre deux locations, après travaux</div></div>
+        <div class="ent-item"><span class="ent-num">03</span><div class="feat-title">Parties communes</div><div class="feat-sub">Halls, escaliers, ascenseurs</div></div>
+        <div class="ent-item"><span class="ent-num">04</span><div class="feat-title">Bureaux &amp; commerces</div><div class="feat-sub">Entretien régulier, vitres</div></div>
+        <div class="ent-item"><span class="ent-num">05</span><div class="feat-title">Renfort haute saison</div><div class="feat-sub">Une équipe en appui lors des pics</div></div>
+        <div class="ent-item"><span class="ent-num">06</span><div class="feat-title">Interventions urgentes</div><div class="feat-sub">Selon disponibilité</div></div>
+      </div>
+    </div>
+    <div class="ent-card reveal" style="transition-delay:.15s">
+      <h3>Nos engagements<br>pour votre établissement</h3>
+      <div class="ent-eng"><div class="earn-num">48h</div><div><div class="ent-eng-t">Une proposition sur mesure</div><div class="ent-eng-s">Claire, chiffrée, sans engagement</div></div></div>
+      <div class="ent-eng"><div class="earn-num">1</div><div><div class="ent-eng-t">Interlocuteur unique</div><div class="ent-eng-s">Qui connaît votre établissement</div></div></div>
+      <div class="ent-eng"><div class="earn-num">0</div><div><div class="ent-eng-t">Surprise sur la facture</div><div class="ent-eng-s">Un forfait clair, défini ensemble</div></div></div>
+      <a href="contact.html" class="btn-main">Être recontacté →</a>
+      <p class="ent-note">Ouverture prochaine · Laissez-nous vos coordonnées</p>
+    </div>
+  </div>
+</section>
+
 <section class="cta-sec" id="signup">
   <div class="cta-bg"></div>
   <div class="cta-in reveal">
@@ -335,7 +388,7 @@ footer{padding:40px 48px;border-top:1px solid rgba(255,255,255,0.06);display:fle
 </section>
 
 <footer>
-  <div class="foot-brand">CleanConnect</div>
+  <div class="brand"><svg class="brand-mark" width="30" height="24" viewBox="0 0 132 104" aria-hidden="true"><defs><linearGradient id="ccg-foot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><path d="M20 74 V38 L56 10 L80 28" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter"/><path d="M98 6 C99.6 16 103.5 19.9 114 21.5 C103.5 23.1 99.6 27 98 37 C96.4 27 92.5 23.1 82 21.5 C92.5 19.9 96.4 16 98 6 Z" fill="#5eead4"/><g transform="rotate(-11 66 82)"><path d="M8 84 C30 66 58 64 80 71 C96 76 110 72 122 60 C113 80 95 90 72 86 C52 82 32 79 8 84 Z" fill="url(#ccg-foot)"/><path d="M30 96 C52 87 74 89 92 91 C105 92 114 87 124 77 C118 94 102 103 82 101 C64 99 48 95 30 96 Z" fill="#a78bfa"/></g></svg><span class="foot-brand">CleanConnect</span></div>
   <div class="foot-links">
     <a onclick="openModal('cgu')">CGU</a>
     <a onclick="openModal('ml')">Mentions légales</a>
